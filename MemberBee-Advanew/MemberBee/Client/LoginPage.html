@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ברוכים הבאים MEMBERBEE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="../images/icons/LOGO (2).png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <!--ספריות מוספות שלנו -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--ספריית JQUERY-->
+
+    <script src="../shaerd/masterScript.js"></script>  <!--קישור לכל פקודות הסקריפט הגנריות-->
+    <!--===============================================================================================-->
+
+
+    <script>
+
+        function login_customer() {
+
+            $("#loder").removeClass("w3-hide");
+
+            var email = $("#insert_email").val();
+            var phone = $("#insert_phone").val();
+            AjaxJsonHandler(systemHelper.webApiEndPoints.login + "/" + email + "/" + phone, systemHelper.HttpVerbs.POST, null, Login_success, GenericError);
+
+
+
+        }
+
+        function Login_success(customer) {
+            if (customer != null) {
+                localStorage.setItem(systemHelper.storege.user, JSON.stringify(customer));
+                location.href = "index.html";
+            }
+
+
+            else {
+                alert("הפרטים שהזנת אינם נכונים");
+            }
+            $("#loder").addClass("w3-hide");
+        }
+
+
+    </script>
+
+</head>
+<body dir="rtl">
+	<!-- hello world -->
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+                        <img src="../images/icons/LOGO (2).png" style="width:70%;" />
+                      
+					</span>
+					
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<input class="input100" type="text" name="email" id="insert_email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="tel" name="pass" id="insert_phone">
+						<span class="focus-input100" data-placeholder="Phone number"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" id="login-btn" onclick="login_customer()" type="button">
+                                
+								Login
+                               <i class="fa fa-refresh w3-spin w3-hide" id="loder" ></i>
+							</button>
+                            
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+						עדיין אין לך חשבון ?
+						</span>
+
+						<a class="txt2" href="Register.html">
+							Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	
+    
+
+	
+    
+</body>
+</html>

@@ -1,0 +1,333 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Flawless Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../template/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../template/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../template/css/bootstrap.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../template/css/magnific-popup.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="../template/css/flexslider.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="../template/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../template/css/owl.theme.default.min.css">
+
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="../template/fonts/flaticon/font/flaticon.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="../template/css/bootstrap-datepicker.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="../template/css/style.css">
+    <!-- Modernizr JS -->
+    <script src="../template/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!--===============================================================================================-->
+    <!--ספריות מוספות שלנו -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--ספריית JQUERY-->
+
+    <script src="../shaerd/masterScript.js"></script>
+    <!--קישור לכל פקודות הסקריפט הגנריות-->
+    <!--css לא צריך לחבר כיוון שהוא מחובר לCSS הכללי של הטמפלט-->
+    <!--===============================================================================================-->
+
+    
+    <script>
+        $(document).ready(function () {
+            let cus = JSON.parse(localStorage.getItem("user"));
+
+            $("#user").html("  " + cus.FirstName + " " + cus.LastName);
+
+
+        });
+
+
+
+
+
+    </script>
+
+</head>
+<body dir="rtl">
+
+    <div class="colorlib-loader"></div>
+
+    <div id="page">
+        <nav class="colorlib-nav" role="navigation">
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div id="colorlib-logo" dir="ltr">
+                                <a href="index.html"><img src="../template/images/icons/LOGO (2).png" style="width:32%" /></a>
+                            </div>
+                        </div>
+                        <div class="col-md-10 text-right menu-1">
+
+                            <ul>
+                                <li class="active" id="user">
+
+                                </li>
+                                <li class="active">
+                                    <a href="index.html">בית</a>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a onclick="toProfilePage()">פרטים אישיים</a>
+
+                                </li>
+                                <li>
+                                    <a href="contact.html">צור קשר</a>
+                                </li>
+                                <li>
+                                    <a href="myClub.html">המועדונים שלי</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <aside id="colorlib-hero" class="colorlib-degree-bg">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url(../images/LIFESTYLE_PIC/coffee-contact-email-4831.jpg);">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h1>צור קשר</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div id="colorlib-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 animate-box">
+                        <h2>דברו איתנו</h2>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="contact-info-wrap-flex">
+                                    <div class="con-info">
+                                        <p><span><i class="icon-location-2"></i></span> המרכז האקדמי רופין <br> עמק חפר, ישראל</p>
+                                    </div>
+                                    <div class="con-info">
+                                        <p><span><i class="icon-phone3"></i></span> <a href="tel://972524460188">+972524460188</a></p>
+                                    </div>
+                                    <div class="con-info">
+                                        <p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@memberbee.com">info@memberbee.com</a></p>
+                                    </div>
+                                    <div class="con-info">
+                                        <p><span><i class="icon-globe"></i></span> <a href="#">memberbee.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-md-offset-1 animate-box">
+                        <h2>כתבו לנו</h2>
+                        <form action="/Client/mailTo.php" method="POST">
+                            <div class="row form-group">
+                                <div class="col-md-6">
+                                    <!-- <label for="fname">First Name</label> -->
+                                    <input type="text" id="fname" class="form-control" placeholder="שם פרטי">
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- <label for="lname">Last Name</label> -->
+                                    <input type="text" id="lname" class="form-control" placeholder="שם משפחה">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <!-- <label for="email">Email</label> -->
+                                    <input type="text" id="email" class="form-control" placeholder="כתובת המייל שלך">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <!-- <label for="subject">Subject</label> -->
+                                    <input type="text" id="subject" class="form-control" placeholder="באיזה עניין?">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <!-- <label for="message">Message</label> -->
+                                    <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="ספר לנו..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" name="submit" >שלח</button>
+                               
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="colorlib-subscribe">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+                        <h2>הרשמו לניוזלטר </h2>
+                        <p>הרשמו על מנת להישאר מעודכנים לגבי המועדונים וההטבות החדשות שלנו</p>
+                    </div>
+                </div>
+                <div class="row animate-box">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form class="form-inline qbstp-header-subscribe">
+                                    <div class="col-three-forth">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="email" placeholder="הכנס את המייל שלך">
+                                        </div>
+                                    </div>
+                                    <div class="col-one-third">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">הרשם כמנוי</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="colorlib-footer">
+            <div class="container">
+                <div class="row row-pb-md">
+
+                    <div class="col-md-3 colorlib-widget">
+                        <h4>ניווט מערכת</h4>
+                        <p>
+                            <ul class="colorlib-footer-links">
+                                <li>
+                                    <a href="#"><i class="icon-home"></i> עלינו</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-document"></i> תנאי שימוש</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-user"></i> מועדוני לקוחות</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-camera"></i> בלוג</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i> פייסבוק</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-phone"></i> צור קשר</a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 colorlib-widget">
+                        <h4>Contact Info</h4>
+                        <ul class="colorlib-footer-links">
+                            <li>
+                                המרכז האקדמי רופין
+                                <br> עמק חפר, ישראל
+                            </li>
+                            <li>
+                                <a href="tel://1234567920"><i class="icon-phone"></i> 972524460188</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@yoursite.com"><i class="icon-envelope"></i> info@memberBee.com</a>
+                            </li>
+                            <li>
+                                <a href="http://luxehotel.com"><i class="icon-location4"></i> memberBee.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copy">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p>
+                                <small class="block">
+                                    &copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;
+                                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+                                    <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </small>
+                                <br>
+                                <small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a>, <a href="http://pexels.com/" target="_blank">Pexels</a></small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="../template/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="../template/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="../template/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="../template/js/jquery.waypoints.min.js"></script>
+    <!-- Stellar Parallax -->
+    <script src="../template/js/jquery.stellar.min.js"></script>
+    <!-- Flexslider -->
+    <script src="../template/js/jquery.flexslider-min.js"></script>
+    <!-- Owl carousel -->
+    <script src="../template/js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="../template/js/jquery.magnific-popup.min.js"></script>
+    <script src="../template/js/magnific-popup-options.js"></script>
+    <!-- Counters -->
+    <script src="../template/js/jquery.countTo.js"></script>
+    <!-- Date Picker -->
+    <script src="../template/js/bootstrap-datepicker.js"></script>
+    <!-- Main -->
+    <script src="../template/js/main.js"></script>
+
+</body>
+</html>

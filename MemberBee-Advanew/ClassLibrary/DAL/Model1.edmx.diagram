@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="62dade268e384a1e875e8d182ee89054" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="igroup36_prodModel.Benefit_Type" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Branch" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Brand" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Category" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Category1" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Child" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.City" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Club" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Club_Benefit_Type" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Club_Customer" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Club_Required_Fields" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Customer" Width="1.5" PointX="3.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Customer_subCategory" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.Required_Field" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="igroup36_prodModel.subCategory" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="igroup36_prodModel.FKClub_Benef388448" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKBranch206065" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKBranch864581" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKBrand837639" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKsubCategor206567" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKChild904573" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKCustomer121389" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKClub_Benef76410" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKClub_Custo739385" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKClub_Requi905154" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKClub_Custo856753" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKClub_Requi378680" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKCustomer_s797966" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.FKCustomer_s126698" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.Brand_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="igroup36_prodModel.Club_Categories" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="igroup36_prodModel.CategoryChoice" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="igroup36_prodModel.CategoryChoice_Customer" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

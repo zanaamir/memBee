@@ -1,0 +1,1190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="igroup36_prodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Benefit Type">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BranchCode" />
+          </Key>
+          <Property Name="BranchCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityCityNumber" Type="int" Nullable="false" />
+          <Property Name="BranchName" Type="varchar" MaxLength="20" />
+          <Property Name="BrandBrandCode" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="googleMapURL" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandCode" />
+          </Key>
+          <Property Name="BrandCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandName" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="50" />
+          <Property Name="ClubClubId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand_Category">
+          <Key>
+            <PropertyRef Name="BrandBrandCode" />
+            <PropertyRef Name="CategoryCategoryNo" />
+          </Key>
+          <Property Name="BrandBrandCode" Type="int" Nullable="false" />
+          <Property Name="CategoryCategoryNo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryNo" />
+          </Key>
+          <Property Name="CategoryNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="int" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryNo" />
+          </Key>
+          <Property Name="CategoryNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CategoryChoice">
+          <Key>
+            <PropertyRef Name="CategoryChoiceNo" />
+          </Key>
+          <Property Name="CategoryChoiceNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryChoiceName" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CategoryChoice_Customer">
+          <Key>
+            <PropertyRef Name="CategoryChoiceNo" />
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CategoryChoiceNo" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Child">
+          <Key>
+            <PropertyRef Name="ChildCode" />
+          </Key>
+          <Property Name="ChildCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="10" />
+          <Property Name="SurName" Type="varchar" MaxLength="10" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="gender" Type="varchar" MaxLength="10" />
+          <Property Name="CustomerIdNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityNumber" />
+          </Key>
+          <Property Name="CityNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="ClubId" />
+          </Key>
+          <Property Name="ClubId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClubName" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="100" />
+          <Property Name="Terms" Type="varchar" MaxLength="100" />
+          <Property Name="Image_Logo" Type="varchar" MaxLength="50" />
+          <Property Name="URL_Internet_site" Type="varchar" MaxLength="10" />
+          <Property Name="קרקרק" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Club_Benefit Type">
+          <Key>
+            <PropertyRef Name="ClubClubId" />
+            <PropertyRef Name="Benefit TypeCode" />
+          </Key>
+          <Property Name="ClubClubId" Type="int" Nullable="false" />
+          <Property Name="Benefit TypeCode" Type="int" Nullable="false" />
+          <Property Name="Specific Benefit" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Club_Categories">
+          <Key>
+            <PropertyRef Name="ClubClubId" />
+            <PropertyRef Name="CategoriesCategoryNo" />
+          </Key>
+          <Property Name="ClubClubId" Type="int" Nullable="false" />
+          <Property Name="CategoriesCategoryNo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Club_Customer">
+          <Key>
+            <PropertyRef Name="ClubClubId" />
+            <PropertyRef Name="CustomerIdNumber" />
+          </Key>
+          <Property Name="ClubClubId" Type="int" Nullable="false" />
+          <Property Name="CustomerIdNumber" Type="int" Nullable="false" />
+          <Property Name="RegistrationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Club_Required Fields">
+          <Key>
+            <PropertyRef Name="ClubClubId" />
+            <PropertyRef Name="Required FieldsFileldNo" />
+          </Key>
+          <Property Name="ClubClubId" Type="int" Nullable="false" />
+          <Property Name="Required FieldsFileldNo" Type="int" Nullable="false" />
+          <Property Name="IsMandatory" Type="int" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="IdNumber" />
+          </Key>
+          <Property Name="IdNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="PhoneNo" Type="int" />
+          <Property Name="MainMail" Type="varchar" MaxLength="50" />
+          <Property Name="CityCityNumber" Type="int" Nullable="false" />
+          <Property Name="NoOfKids" Type="int" />
+          <Property Name="gender" Type="varchar" MaxLength="10" />
+          <Property Name="MarrigeDate" Type="datetime" />
+          <Property Name="SignDate" Type="datetime" />
+          <Property Name="address" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Customer_subCategory">
+          <Key>
+            <PropertyRef Name="CustomerIdNumber" />
+            <PropertyRef Name="subCategorySubNo" />
+          </Key>
+          <Property Name="CustomerIdNumber" Type="int" Nullable="false" />
+          <Property Name="subCategorySubNo" Type="int" Nullable="false" />
+          <Property Name="checkedDate" Type="int" />
+        </EntityType>
+        <EntityType Name="Required Fields">
+          <Key>
+            <PropertyRef Name="FileldNo" />
+          </Key>
+          <Property Name="FileldNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FiledName" Type="int" />
+          <Property Name="RefTable" Type="int" />
+        </EntityType>
+        <EntityType Name="subCategory">
+          <Key>
+            <PropertyRef Name="SubNo" />
+          </Key>
+          <Property Name="SubNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubCategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="CategoriesCategoryNo" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CategoryC__Categ__308E3499">
+          <End Role="CategoryChoice" Type="Self.CategoryChoice" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryChoice_Customer" Type="Self.CategoryChoice_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryChoice">
+              <PropertyRef Name="CategoryChoiceNo" />
+            </Principal>
+            <Dependent Role="CategoryChoice_Customer">
+              <PropertyRef Name="CategoryChoiceNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CategoryC__Custo__318258D2">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryChoice_Customer" Type="Self.CategoryChoice_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdNumber" />
+            </Principal>
+            <Dependent Role="CategoryChoice_Customer">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBranch206065">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="BrandCode" />
+            </Principal>
+            <Dependent Role="Branch">
+              <PropertyRef Name="BrandBrandCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBranch864581">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityNumber" />
+            </Principal>
+            <Dependent Role="Branch">
+              <PropertyRef Name="CityCityNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBrand_Cate28660">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Brand_Category" Type="Self.Brand_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryNo" />
+            </Principal>
+            <Dependent Role="Brand_Category">
+              <PropertyRef Name="CategoryCategoryNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBrand_Cate783174">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="Brand_Category" Type="Self.Brand_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="BrandCode" />
+            </Principal>
+            <Dependent Role="Brand_Category">
+              <PropertyRef Name="BrandBrandCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBrand837639">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Brand" Type="Self.Brand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Brand">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKChild904573">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdNumber" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="CustomerIdNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Benef388448">
+          <End Role="Benefit Type" Type="Self.Benefit Type" Multiplicity="1" />
+          <End Role="Club_Benefit Type" Type="Self.Club_Benefit Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benefit Type">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Club_Benefit Type">
+              <PropertyRef Name="Benefit TypeCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Benef76410">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Club_Benefit Type" Type="Self.Club_Benefit Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Club_Benefit Type">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Categ491161">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Club_Categories" Type="Self.Club_Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Club_Categories">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Categ702853">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="Club_Categories" Type="Self.Club_Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryNo" />
+            </Principal>
+            <Dependent Role="Club_Categories">
+              <PropertyRef Name="CategoriesCategoryNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Custo739385">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Club_Customer" Type="Self.Club_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Club_Customer">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Custo856753">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Club_Customer" Type="Self.Club_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdNumber" />
+            </Principal>
+            <Dependent Role="Club_Customer">
+              <PropertyRef Name="CustomerIdNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Requi378680">
+          <End Role="Required Fields" Type="Self.Required Fields" Multiplicity="1" />
+          <End Role="Club_Required Fields" Type="Self.Club_Required Fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Required Fields">
+              <PropertyRef Name="FileldNo" />
+            </Principal>
+            <Dependent Role="Club_Required Fields">
+              <PropertyRef Name="Required FieldsFileldNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Requi905154">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Club_Required Fields" Type="Self.Club_Required Fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Club_Required Fields">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCustomer_s126698">
+          <End Role="subCategory" Type="Self.subCategory" Multiplicity="1" />
+          <End Role="Customer_subCategory" Type="Self.Customer_subCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subCategory">
+              <PropertyRef Name="SubNo" />
+            </Principal>
+            <Dependent Role="Customer_subCategory">
+              <PropertyRef Name="subCategorySubNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCustomer_s797966">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer_subCategory" Type="Self.Customer_subCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdNumber" />
+            </Principal>
+            <Dependent Role="Customer_subCategory">
+              <PropertyRef Name="CustomerIdNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCustomer121389">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityNumber" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CityCityNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKsubCategor206567">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="subCategory" Type="Self.subCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryNo" />
+            </Principal>
+            <Dependent Role="subCategory">
+              <PropertyRef Name="CategoriesCategoryNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="igroup36_prodModelStoreContainer">
+          <EntitySet Name="Benefit Type" EntityType="Self.Benefit Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand_Category" EntityType="Self.Brand_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoryChoice" EntityType="Self.CategoryChoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoryChoice_Customer" EntityType="Self.CategoryChoice_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Child" EntityType="Self.Child" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Club" EntityType="Self.Club" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Club_Benefit Type" EntityType="Self.Club_Benefit Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Club_Categories" EntityType="Self.Club_Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Club_Customer" EntityType="Self.Club_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Club_Required Fields" EntityType="Self.Club_Required Fields" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_subCategory" EntityType="Self.Customer_subCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Required Fields" EntityType="Self.Required Fields" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subCategory" EntityType="Self.subCategory" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CategoryC__Categ__308E3499" Association="Self.FK__CategoryC__Categ__308E3499">
+            <End Role="CategoryChoice" EntitySet="CategoryChoice" />
+            <End Role="CategoryChoice_Customer" EntitySet="CategoryChoice_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CategoryC__Custo__318258D2" Association="Self.FK__CategoryC__Custo__318258D2">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CategoryChoice_Customer" EntitySet="CategoryChoice_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FKBranch206065" Association="Self.FKBranch206065">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Branch" EntitySet="Branch" />
+          </AssociationSet>
+          <AssociationSet Name="FKBranch864581" Association="Self.FKBranch864581">
+            <End Role="City" EntitySet="City" />
+            <End Role="Branch" EntitySet="Branch" />
+          </AssociationSet>
+          <AssociationSet Name="FKBrand_Cate28660" Association="Self.FKBrand_Cate28660">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Brand_Category" EntitySet="Brand_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FKBrand_Cate783174" Association="Self.FKBrand_Cate783174">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Brand_Category" EntitySet="Brand_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FKBrand837639" Association="Self.FKBrand837639">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Brand" EntitySet="Brand" />
+          </AssociationSet>
+          <AssociationSet Name="FKChild904573" Association="Self.FKChild904573">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Child" EntitySet="Child" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Benef388448" Association="Self.FKClub_Benef388448">
+            <End Role="Benefit Type" EntitySet="Benefit Type" />
+            <End Role="Club_Benefit Type" EntitySet="Club_Benefit Type" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Benef76410" Association="Self.FKClub_Benef76410">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Club_Benefit Type" EntitySet="Club_Benefit Type" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Categ491161" Association="Self.FKClub_Categ491161">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Club_Categories" EntitySet="Club_Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Categ702853" Association="Self.FKClub_Categ702853">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Club_Categories" EntitySet="Club_Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Custo739385" Association="Self.FKClub_Custo739385">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Club_Customer" EntitySet="Club_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Custo856753" Association="Self.FKClub_Custo856753">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Club_Customer" EntitySet="Club_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Requi378680" Association="Self.FKClub_Requi378680">
+            <End Role="Required Fields" EntitySet="Required Fields" />
+            <End Role="Club_Required Fields" EntitySet="Club_Required Fields" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Requi905154" Association="Self.FKClub_Requi905154">
+            <End Role="Club" EntitySet="Club" />
+            <End Role="Club_Required Fields" EntitySet="Club_Required Fields" />
+          </AssociationSet>
+          <AssociationSet Name="FKCustomer_s126698" Association="Self.FKCustomer_s126698">
+            <End Role="subCategory" EntitySet="subCategory" />
+            <End Role="Customer_subCategory" EntitySet="Customer_subCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FKCustomer_s797966" Association="Self.FKCustomer_s797966">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer_subCategory" EntitySet="Customer_subCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FKCustomer121389" Association="Self.FKCustomer121389">
+            <End Role="City" EntitySet="City" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FKsubCategor206567" Association="Self.FKsubCategor206567">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="subCategory" EntitySet="subCategory" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="igroup36_prodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Benefit_Type">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Club_Benefit_Type" Relationship="Self.FKClub_Benef388448" FromRole="Benefit_Type" ToRole="Club_Benefit_Type" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BranchCode" />
+          </Key>
+          <Property Name="BranchCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityCityNumber" Type="Int32" Nullable="false" />
+          <Property Name="BranchName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BrandBrandCode" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="googleMapURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Brand" Relationship="Self.FKBranch206065" FromRole="Branch" ToRole="Brand" />
+          <NavigationProperty Name="City" Relationship="Self.FKBranch864581" FromRole="Branch" ToRole="City" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="BrandCode" />
+          </Key>
+          <Property Name="BrandCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClubClubId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Branches" Relationship="Self.FKBranch206065" FromRole="Brand" ToRole="Branch" />
+          <NavigationProperty Name="Club" Relationship="Self.FKBrand837639" FromRole="Brand" ToRole="Club" />
+          <NavigationProperty Name="Categories" Relationship="Self.Brand_Category" FromRole="Brand" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryNo" />
+          </Key>
+          <Property Name="CategoryNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="Int32" />
+          <NavigationProperty Name="subCategories" Relationship="Self.FKsubCategor206567" FromRole="Categories" ToRole="subCategory" />
+          <NavigationProperty Name="Clubs" Relationship="Self.Club_Categories" FromRole="Categories" ToRole="Club" />
+        </EntityType>
+        <EntityType Name="Category1">
+          <Key>
+            <PropertyRef Name="CategoryNo" />
+          </Key>
+          <Property Name="CategoryNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Brands" Relationship="Self.Brand_Category" FromRole="Category" ToRole="Brand" />
+        </EntityType>
+        <EntityType Name="Child">
+          <Key>
+            <PropertyRef Name="ChildCode" />
+          </Key>
+          <Property Name="ChildCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SurName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerIdNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FKChild904573" FromRole="Child" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityNumber" />
+          </Key>
+          <Property Name="CityNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Branches" Relationship="Self.FKBranch864581" FromRole="City" ToRole="Branch" />
+          <NavigationProperty Name="Customers" Relationship="Self.FKCustomer121389" FromRole="City" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="ClubId" />
+          </Key>
+          <Property Name="ClubId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClubName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Terms" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Image_Logo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="URL_Internet_site" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Brands" Relationship="Self.FKBrand837639" FromRole="Club" ToRole="Brand" />
+          <NavigationProperty Name="Club_Benefit_Type" Relationship="Self.FKClub_Benef76410" FromRole="Club" ToRole="Club_Benefit_Type" />
+          <NavigationProperty Name="Club_Customer" Relationship="Self.FKClub_Custo739385" FromRole="Club" ToRole="Club_Customer" />
+          <NavigationProperty Name="Club_Required_Fields" Relationship="Self.FKClub_Requi905154" FromRole="Club" ToRole="Club_Required_Fields" />
+          <NavigationProperty Name="Categories" Relationship="Self.Club_Categories" FromRole="Club" ToRole="Categories" />
+          <Property Name="קרקרק" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Club_Benefit_Type">
+          <Key>
+            <PropertyRef Name="ClubClubId" />
+            <PropertyRef Name="Benefit_TypeCode" />
+          </Key>
+          <Property Name="ClubClubId" Type="Int32" Nullable="false" />
+          <Property Name="Benefit_TypeCode" Type="Int32" Nullable="false" />
+          <Property Name="Specific_Benefit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Benefit_Type" Relationship="Self.FKClub_Benef388448" FromRole="Club_Benefit_Type" ToRole="Benefit_Type" />
+          <NavigationProperty Name="Club" Relationship="Self.FKClub_Benef76410" FromRole="Club_Benefit_Type" ToRole="Club" />
+        </EntityType>
+        <EntityType Name="Club_Customer">
+          <Key>
+            <PropertyRef Name="ClubClubId" />
+            <PropertyRef Name="CustomerIdNumber" />
+          </Key>
+          <Property Name="ClubClubId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerIdNumber" Type="Int32" Nullable="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Club" Relationship="Self.FKClub_Custo739385" FromRole="Club_Customer" ToRole="Club" />
+          <NavigationProperty Name="Customer" Relationship="Self.FKClub_Custo856753" FromRole="Club_Customer" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Club_Required_Fields">
+          <Key>
+            <PropertyRef Name="ClubClubId" />
+            <PropertyRef Name="Required_FieldsFileldNo" />
+          </Key>
+          <Property Name="ClubClubId" Type="Int32" Nullable="false" />
+          <Property Name="Required_FieldsFileldNo" Type="Int32" Nullable="false" />
+          <Property Name="IsMandatory" Type="Int32" />
+          <NavigationProperty Name="Club" Relationship="Self.FKClub_Requi905154" FromRole="Club_Required_Fields" ToRole="Club" />
+          <NavigationProperty Name="Required_Fields" Relationship="Self.FKClub_Requi378680" FromRole="Club_Required_Fields" ToRole="Required_Fields" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="IdNumber" />
+          </Key>
+          <Property Name="IdNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="PhoneNo" Type="Int32" />
+          <Property Name="MainMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CityCityNumber" Type="Int32" Nullable="false" />
+          <Property Name="NoOfKids" Type="Int32" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MarrigeDate" Type="DateTime" Precision="3" />
+          <Property Name="SignDate" Type="DateTime" Precision="3" />
+          <Property Name="address" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Children" Relationship="Self.FKChild904573" FromRole="Customer" ToRole="Child" />
+          <NavigationProperty Name="City" Relationship="Self.FKCustomer121389" FromRole="Customer" ToRole="City" />
+          <NavigationProperty Name="Club_Customer" Relationship="Self.FKClub_Custo856753" FromRole="Customer" ToRole="Club_Customer" />
+          <NavigationProperty Name="Customer_subCategory" Relationship="Self.FKCustomer_s797966" FromRole="Customer" ToRole="Customer_subCategory" />
+          <NavigationProperty Name="CategoryChoices" Relationship="igroup36_prodModel.CategoryChoice_Customer" FromRole="Customer" ToRole="CategoryChoice" />
+        </EntityType>
+        <EntityType Name="Customer_subCategory">
+          <Key>
+            <PropertyRef Name="CustomerIdNumber" />
+            <PropertyRef Name="subCategorySubNo" />
+          </Key>
+          <Property Name="CustomerIdNumber" Type="Int32" Nullable="false" />
+          <Property Name="subCategorySubNo" Type="Int32" Nullable="false" />
+          <Property Name="checkedDate" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FKCustomer_s797966" FromRole="Customer_subCategory" ToRole="Customer" />
+          <NavigationProperty Name="subCategory" Relationship="Self.FKCustomer_s126698" FromRole="Customer_subCategory" ToRole="subCategory" />
+        </EntityType>
+        <EntityType Name="Required_Field">
+          <Key>
+            <PropertyRef Name="FileldNo" />
+          </Key>
+          <Property Name="FileldNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FiledName" Type="Int32" />
+          <Property Name="RefTable" Type="Int32" />
+          <NavigationProperty Name="Club_Required_Fields" Relationship="Self.FKClub_Requi378680" FromRole="Required_Fields" ToRole="Club_Required_Fields" />
+        </EntityType>
+        <EntityType Name="subCategory">
+          <Key>
+            <PropertyRef Name="SubNo" />
+          </Key>
+          <Property Name="SubNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CategoriesCategoryNo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FKsubCategor206567" FromRole="subCategory" ToRole="Categories" />
+          <NavigationProperty Name="Customer_subCategory" Relationship="Self.FKCustomer_s126698" FromRole="subCategory" ToRole="Customer_subCategory" />
+        </EntityType>
+        <Association Name="FKClub_Benef388448">
+          <End Role="Benefit_Type" Type="Self.Benefit_Type" Multiplicity="1" />
+          <End Role="Club_Benefit_Type" Type="Self.Club_Benefit_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benefit_Type">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Club_Benefit_Type">
+              <PropertyRef Name="Benefit_TypeCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBranch206065">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="BrandCode" />
+            </Principal>
+            <Dependent Role="Branch">
+              <PropertyRef Name="BrandBrandCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBranch864581">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityNumber" />
+            </Principal>
+            <Dependent Role="Branch">
+              <PropertyRef Name="CityCityNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBrand837639">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Brand" Type="Self.Brand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Brand">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKsubCategor206567">
+          <End Role="Categories" Type="Self.Category" Multiplicity="1" />
+          <End Role="subCategory" Type="Self.subCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryNo" />
+            </Principal>
+            <Dependent Role="subCategory">
+              <PropertyRef Name="CategoriesCategoryNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKChild904573">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Child" Type="Self.Child" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdNumber" />
+            </Principal>
+            <Dependent Role="Child">
+              <PropertyRef Name="CustomerIdNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCustomer121389">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityNumber" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CityCityNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Benef76410">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Club_Benefit_Type" Type="Self.Club_Benefit_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Club_Benefit_Type">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Custo739385">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Club_Customer" Type="Self.Club_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Club_Customer">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Requi905154">
+          <End Role="Club" Type="Self.Club" Multiplicity="1" />
+          <End Role="Club_Required_Fields" Type="Self.Club_Required_Fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Club">
+              <PropertyRef Name="ClubId" />
+            </Principal>
+            <Dependent Role="Club_Required_Fields">
+              <PropertyRef Name="ClubClubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Custo856753">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Club_Customer" Type="Self.Club_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdNumber" />
+            </Principal>
+            <Dependent Role="Club_Customer">
+              <PropertyRef Name="CustomerIdNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKClub_Requi378680">
+          <End Role="Required_Fields" Type="Self.Required_Field" Multiplicity="1" />
+          <End Role="Club_Required_Fields" Type="Self.Club_Required_Fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Required_Fields">
+              <PropertyRef Name="FileldNo" />
+            </Principal>
+            <Dependent Role="Club_Required_Fields">
+              <PropertyRef Name="Required_FieldsFileldNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCustomer_s797966">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer_subCategory" Type="Self.Customer_subCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdNumber" />
+            </Principal>
+            <Dependent Role="Customer_subCategory">
+              <PropertyRef Name="CustomerIdNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCustomer_s126698">
+          <End Role="subCategory" Type="Self.subCategory" Multiplicity="1" />
+          <End Role="Customer_subCategory" Type="Self.Customer_subCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subCategory">
+              <PropertyRef Name="SubNo" />
+            </Principal>
+            <Dependent Role="Customer_subCategory">
+              <PropertyRef Name="subCategorySubNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Brand_Category">
+          <End Role="Category" Type="Self.Category1" Multiplicity="*" />
+          <End Role="Brand" Type="Self.Brand" Multiplicity="*" />
+        </Association>
+        <Association Name="Club_Categories">
+          <End Role="Club" Type="Self.Club" Multiplicity="*" />
+          <End Role="Categories" Type="Self.Category" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="igroup36_prodEntities" annotation:LazyLoadingEnabled="false">
+          <EntitySet Name="Benefit_Types" EntityType="Self.Benefit_Type" />
+          <EntitySet Name="Branches" EntityType="Self.Branch" />
+          <EntitySet Name="Brands" EntityType="Self.Brand" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Categories1" EntityType="Self.Category1" />
+          <EntitySet Name="Children" EntityType="Self.Child" />
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Clubs" EntityType="Self.Club" />
+          <EntitySet Name="Club_Benefit_Type" EntityType="Self.Club_Benefit_Type" />
+          <EntitySet Name="Club_Customer" EntityType="Self.Club_Customer" />
+          <EntitySet Name="Club_Required_Fields" EntityType="Self.Club_Required_Fields" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Customer_subCategory" EntityType="Self.Customer_subCategory" />
+          <EntitySet Name="Required_Fields" EntityType="Self.Required_Field" />
+          <EntitySet Name="subCategories" EntityType="Self.subCategory" />
+          <AssociationSet Name="FKClub_Benef388448" Association="Self.FKClub_Benef388448">
+            <End Role="Benefit_Type" EntitySet="Benefit_Types" />
+            <End Role="Club_Benefit_Type" EntitySet="Club_Benefit_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FKBranch206065" Association="Self.FKBranch206065">
+            <End Role="Brand" EntitySet="Brands" />
+            <End Role="Branch" EntitySet="Branches" />
+          </AssociationSet>
+          <AssociationSet Name="FKBranch864581" Association="Self.FKBranch864581">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Branch" EntitySet="Branches" />
+          </AssociationSet>
+          <AssociationSet Name="FKBrand837639" Association="Self.FKBrand837639">
+            <End Role="Club" EntitySet="Clubs" />
+            <End Role="Brand" EntitySet="Brands" />
+          </AssociationSet>
+          <AssociationSet Name="FKsubCategor206567" Association="Self.FKsubCategor206567">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="subCategory" EntitySet="subCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FKChild904573" Association="Self.FKChild904573">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Child" EntitySet="Children" />
+          </AssociationSet>
+          <AssociationSet Name="FKCustomer121389" Association="Self.FKCustomer121389">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Benef76410" Association="Self.FKClub_Benef76410">
+            <End Role="Club" EntitySet="Clubs" />
+            <End Role="Club_Benefit_Type" EntitySet="Club_Benefit_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Custo739385" Association="Self.FKClub_Custo739385">
+            <End Role="Club" EntitySet="Clubs" />
+            <End Role="Club_Customer" EntitySet="Club_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Requi905154" Association="Self.FKClub_Requi905154">
+            <End Role="Club" EntitySet="Clubs" />
+            <End Role="Club_Required_Fields" EntitySet="Club_Required_Fields" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Custo856753" Association="Self.FKClub_Custo856753">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Club_Customer" EntitySet="Club_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FKClub_Requi378680" Association="Self.FKClub_Requi378680">
+            <End Role="Required_Fields" EntitySet="Required_Fields" />
+            <End Role="Club_Required_Fields" EntitySet="Club_Required_Fields" />
+          </AssociationSet>
+          <AssociationSet Name="FKCustomer_s797966" Association="Self.FKCustomer_s797966">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Customer_subCategory" EntitySet="Customer_subCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FKCustomer_s126698" Association="Self.FKCustomer_s126698">
+            <End Role="subCategory" EntitySet="subCategories" />
+            <End Role="Customer_subCategory" EntitySet="Customer_subCategory" />
+          </AssociationSet>
+          <AssociationSet Name="Brand_Category" Association="Self.Brand_Category">
+            <End Role="Category" EntitySet="Categories1" />
+            <End Role="Brand" EntitySet="Brands" />
+          </AssociationSet>
+          <AssociationSet Name="Club_Categories" Association="Self.Club_Categories">
+            <End Role="Club" EntitySet="Clubs" />
+            <End Role="Categories" EntitySet="Categories" />
+          </AssociationSet>
+          <EntitySet Name="CategoryChoices" EntityType="igroup36_prodModel.CategoryChoice" />
+          <AssociationSet Name="CategoryChoice_Customer" Association="igroup36_prodModel.CategoryChoice_Customer">
+            <End Role="CategoryChoice" EntitySet="CategoryChoices" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CategoryChoice">
+          <Key>
+            <PropertyRef Name="CategoryChoiceNo" />
+          </Key>
+          <Property Name="CategoryChoiceNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryChoiceName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="igroup36_prodModel.CategoryChoice_Customer" FromRole="CategoryChoice" ToRole="Customer" />
+        </EntityType>
+        <Association Name="CategoryChoice_Customer">
+          <End Type="igroup36_prodModel.CategoryChoice" Role="CategoryChoice" Multiplicity="*" />
+          <End Type="igroup36_prodModel.Customer" Role="Customer" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="igroup36_prodModelStoreContainer" CdmEntityContainer="igroup36_prodEntities">
+          <EntitySetMapping Name="Benefit_Types">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Benefit_Type">
+              <MappingFragment StoreEntitySet="Benefit Type">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Branches">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Branch">
+              <MappingFragment StoreEntitySet="Branch">
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="CityCityNumber" ColumnName="CityCityNumber" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="BrandBrandCode" ColumnName="BrandBrandCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="googleMapURL" ColumnName="googleMapURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="CategoryNo" ColumnName="CategoryNo" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories1">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Category1">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryNo" ColumnName="CategoryNo" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Children">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Child">
+              <MappingFragment StoreEntitySet="Child">
+                <ScalarProperty Name="ChildCode" ColumnName="ChildCode" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="igroup36_prodModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CityNumber" ColumnName="CityNumber" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clubs">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Club">
+              <MappingFragment StoreEntitySet="Club">
+                <ScalarProperty Name="קרקרק" ColumnName="קרקרק" />
+                <ScalarProperty Name="URL_Internet_site" ColumnName="URL_Internet_site" />
+                <ScalarProperty Name="ClubId" ColumnName="ClubId" />
+                <ScalarProperty Name="ClubName" ColumnName="ClubName" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="Terms" ColumnName="Terms" />
+                <ScalarProperty Name="Image_Logo" ColumnName="Image_Logo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Club_Benefit_Type">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Club_Benefit_Type">
+              <MappingFragment StoreEntitySet="Club_Benefit Type">
+                <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
+                <ScalarProperty Name="Benefit_TypeCode" ColumnName="Benefit TypeCode" />
+                <ScalarProperty Name="Specific_Benefit" ColumnName="Specific Benefit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Club_Customer">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Club_Customer">
+              <MappingFragment StoreEntitySet="Club_Customer">
+                <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
+                <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Club_Required_Fields">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Club_Required_Fields">
+              <MappingFragment StoreEntitySet="Club_Required Fields">
+                <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
+                <ScalarProperty Name="Required_FieldsFileldNo" ColumnName="Required FieldsFileldNo" />
+                <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="MainMail" ColumnName="MainMail" />
+                <ScalarProperty Name="CityCityNumber" ColumnName="CityCityNumber" />
+                <ScalarProperty Name="NoOfKids" ColumnName="NoOfKids" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="MarrigeDate" ColumnName="MarrigeDate" />
+                <ScalarProperty Name="SignDate" ColumnName="SignDate" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_subCategory">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Customer_subCategory">
+              <MappingFragment StoreEntitySet="Customer_subCategory">
+                <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
+                <ScalarProperty Name="subCategorySubNo" ColumnName="subCategorySubNo" />
+                <ScalarProperty Name="checkedDate" ColumnName="checkedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Required_Fields">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Required_Field">
+              <MappingFragment StoreEntitySet="Required Fields">
+                <ScalarProperty Name="FileldNo" ColumnName="FileldNo" />
+                <ScalarProperty Name="FiledName" ColumnName="FiledName" />
+                <ScalarProperty Name="RefTable" ColumnName="RefTable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subCategories">
+            <EntityTypeMapping TypeName="igroup36_prodModel.subCategory">
+              <MappingFragment StoreEntitySet="subCategory">
+                <ScalarProperty Name="SubNo" ColumnName="SubNo" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+                <ScalarProperty Name="CategoriesCategoryNo" ColumnName="CategoriesCategoryNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Brand_Category" TypeName="igroup36_prodModel.Brand_Category" StoreEntitySet="Brand_Category">
+            <EndProperty Name="Category">
+              <ScalarProperty Name="CategoryNo" ColumnName="CategoryCategoryNo" />
+            </EndProperty>
+            <EndProperty Name="Brand">
+              <ScalarProperty Name="BrandCode" ColumnName="BrandBrandCode" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Club_Categories" TypeName="igroup36_prodModel.Club_Categories" StoreEntitySet="Club_Categories">
+            <EndProperty Name="Club">
+              <ScalarProperty Name="ClubId" ColumnName="ClubClubId" />
+            </EndProperty>
+            <EndProperty Name="Categories">
+              <ScalarProperty Name="CategoryNo" ColumnName="CategoriesCategoryNo" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="CategoryChoices">
+            <EntityTypeMapping TypeName="igroup36_prodModel.CategoryChoice">
+              <MappingFragment StoreEntitySet="CategoryChoice">
+                <ScalarProperty Name="CategoryChoiceName" ColumnName="CategoryChoiceName" />
+                <ScalarProperty Name="CategoryChoiceNo" ColumnName="CategoryChoiceNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CategoryChoice_Customer" TypeName="igroup36_prodModel.CategoryChoice_Customer" StoreEntitySet="CategoryChoice_Customer">
+            <EndProperty Name="Customer">
+              <ScalarProperty Name="IdNumber" ColumnName="CustomerID" />
+            </EndProperty>
+            <EndProperty Name="CategoryChoice">
+              <ScalarProperty Name="CategoryChoiceNo" ColumnName="CategoryChoiceNo" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
